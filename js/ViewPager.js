@@ -116,7 +116,7 @@ class ViewPager extends React.Component<ViewPagerProps> {
     if (this.props.onPageScrollStateChanged) {
       this.props.onPageScrollStateChanged(e);
     }
-    this.isScrolling = e.nativeEvent.pageScrollState === 'dragging';
+    this.isScrolling = e.nativeEvent.pageScrollState !== 'idle';
   };
 
   _onPageSelected = (e: PageSelectedEvent) => {
